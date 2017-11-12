@@ -16,3 +16,28 @@ function isUnicode() {
 	return (kaWidth == patsintWidth);
 }
 
+function loadFont(fontType) {
+	// TODO: detect unicode or zawgyi and load fonts respectively
+	var mmFonts = {
+		zawgyi: {
+			fontFamily: "Zawgyi-One",
+			fontSource: "local('Zawgyi-One'), url('fonts/zawgyi.woff') format('woff'), url('fonts/zawgyi.ttf') format('ttf')"
+		},
+		unicode: {
+			fontFamily: "Myanmar3",
+			fontSource: "local('Myanmar3'), url('fonts/myanmar3.woff') format('woff'), url('fonts/myanmar3.ttf') format('ttf')"
+		}
+	};
+
+	var head = document.getElementsByTagName("head")[0];
+	var css = document.createElement("style");
+
+	if (fontType == 'unicode') {
+		css.appendChild(document.createTextNode('@font-face { font-family: ' + mmFonts.zawgyi.fontFamily + '; src: ' + mmFonts.zawgyi.fontSource + '; }'));
+		head.appendChild(css);
+	} else if(fontType == 'zawgyi') {
+		css.appendChild(document.createTextNode('@font-face { font-family: ' + mmFonts.unicode.fontFamily + '; src: ' + mmFonts.unicode.fontSource + '; }'));
+		head.appendChild(css);
+	}
+
+}

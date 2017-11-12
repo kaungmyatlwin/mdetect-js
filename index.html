@@ -1,15 +1,20 @@
 <html>
+	<head>
 		<meta charset="utf8"/>
-		<script src="mdetect.js"></script>
+	</head>
 		<body>
-			<script>
+			<p>ယူနီကုတ်</p>
+			<p>ေဇာ္ဂ်ီ</p>
+		</body>
+		<script src="mdetect.js"></script>
+		<script>
 				if (isUnicode()) {
-					alert('unicode');
+					console.log('unicode');
+					loadFont('zawgyi');
 				}
 				else {
-					alert('zawgyi');
+					console.log('zawgyi');
+					loadFont('unicode');
 				}
 				</script>
-				
-		</body>
 	</html>
