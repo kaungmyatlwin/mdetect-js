@@ -34,9 +34,11 @@ function loadFont(fontType) {
 
 	if (fontType == 'unicode') {
 		css.appendChild(document.createTextNode('@font-face { font-family: ' + mmFonts.zawgyi.fontFamily + '; src: ' + mmFonts.zawgyi.fontSource + '; }'));
+		css.appendChild(document.createTextNode('* { font-family: Myanmar3 }'));
 		head.appendChild(css);
 	} else if(fontType == 'zawgyi') {
 		css.appendChild(document.createTextNode('@font-face { font-family: ' + mmFonts.unicode.fontFamily + '; src: ' + mmFonts.unicode.fontSource + '; }'));
+		css.appendChild(document.createTextNode('* { font-family: Zawgyi-One }'));
 		head.appendChild(css);
 	}
 
