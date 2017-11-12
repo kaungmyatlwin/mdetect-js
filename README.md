@@ -11,4 +11,13 @@ For example: Zawgyi font is detected, Unicode font will be loaded and vice versa
 Use `loadFont('unicode')` to load Unicode font into browser.
 Use `loadFont('zawgyi')` to load Zawgyi font into browser.
 
-See example for further more.
+For example: 
+
+```javascript
+if (isUnicode()) {
+  loadFont('zawgyi');
+}
+else {
+  loadFont('unicode');
+}
+```
